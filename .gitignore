@@ -42,3 +42,4 @@ Thumbs.db
 ### Notes on your specific file ###
 # REMOVED: application.properties (Keep this in git unless it has secrets!)
 # REMOVED: !**/src/main/**/target/ (Usually redundant if 'target/' is ignored)
+/.apt_generated_tests/
