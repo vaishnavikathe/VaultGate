@@ -55,19 +55,18 @@ public class User {
 	private String name;
 	
 	@Enumerated(EnumType.STRING)
+	@Column(nullable = false)
 	private Role role;
 	
 	private LocalDateTime lastLogin;
 	private LocalDateTime lastActive;
 	
 	@Enumerated(EnumType.STRING)
-	@Column(name = "account_status")
+	@Column(name = "account_status", nullable = false)
 	private AccountStatus accountStatus;
 	
-	
-	
 	@Column(name = "failed_login_attempts", nullable = false)
-	private int failedLoginAttempts;	
+	private int failedLoginAttempts = 0;	
 	
 	private LocalDateTime lastFailedLogin;
 	
