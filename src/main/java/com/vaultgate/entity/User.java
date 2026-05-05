@@ -50,7 +50,7 @@ public class User {
 	@Column(unique = true, nullable = false)
 	private String email;
 	
-	@Pattern(regexp = "^[0-9]{10}$", message = "Invaild mobile number")
+	@Pattern(regexp = "^[0-9]{10}$", message = "Invalid mobile number")
 	private String mobile;
 	private String name;
 	
@@ -86,5 +86,8 @@ public class User {
 		if (failedLoginAttempts < 0) {
 	        failedLoginAttempts = 0;
 	    }
+		if (role == null) {
+		    role = Role.USER;
+		}
 	}
 }
