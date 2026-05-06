@@ -52,6 +52,9 @@ public class Vault {
     @Enumerated(EnumType.STRING)
     @Column(name = "status", nullable = false)
     private VaultStatus vaultStatus;
+    
+    @Column(name = "is_released", nullable = false)
+    private Boolean isReleased;
 
     @Column(name = "release_time")
     private LocalDateTime releaseTime;
@@ -77,6 +80,9 @@ public class Vault {
         }
         if (contentType == null) {
             contentType = ContentType.TEXT;
+        }
+        if (isReleased == null) {
+            isReleased = false;
         }
     }
 }
